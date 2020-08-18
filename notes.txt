@@ -1,0 +1,151 @@
+DEGREESEE -- IOT APP CREATION
+
+- create github repo w/ readme initialized
+- git clone
+
+GITHUB or CodeCommit?
+
+Creating Stripe Account
+	- need EIN employee id number??
+	- need banking info
+	- how heavy should CLI use be?
+	- AWS account preferred IMO 
+
+Architecture Inspo
+https://aws.amazon.com/blogs/mobile/appsync-microservices/
+
+Creating AWS Account 
+	- needs to include IAM role creation for security 
+
+Scaffolding Research
+	- GatsbyJS
+	- Vuejs
+		- projects can be created via CLI or UI 
+	- reach out to adam and broc for ideas
+	- research is telling me that React and Vue are both pretty equal, yet Vue is more approachable
+	- Adam and Broc both say Vue
+		- I'm doing both a vuejs-templates/webpack and vuetify tutorial, both recommended by Adam
+	- AWS Amplify 
+		- connect cloud backend to app
+		- Automatically set up backends: authentication, storage, or APIs, powered by AWS services, Amazon Cognito, S3
+		- develop app with amplify framework
+		- host web app with amplify console
+		- Amplify Framework adds support for AWS Lambda functions and Amazon DynamoDB custom indexes in GraphQL schemas
+		- explore API Gateway (REST) vs. AWS AppSync
+		- CLI 
+			- allows creation of rest api, lambda resource, AND dynamodb table (with api gateway integration) directly through cli step by step
+
+	- Amplify tutorial ( https://docs.amplify.aws/start/getting-started/setup/q/integration/vue#initialize-a-new-backend )
+		- CLI setup requires console access to AWS
+			- create IAM user with admin access, no boundaries, programmatic access; walks you thorugh creation or you can just add a previously created user access key id + secret key
+		- went with default babel, eslint (can manually select)
+		- lots of CLI setup... app name can't have symbols, add the profile created in the beginning 
+		- npm installed aws-amplify @aws-amplify/ui-vue for vue specific UI components
+			- added to src/main.js
+				```
+				import Amplify from 'aws-amplify';
+				import '@aws-amplify/ui-vue';
+				import aws_exports from './aws-exports';
+
+				Amplify.configure(aws_exports); 
+				```
+
+	- moved on to this tutorial -- kind of combining them rn 
+	- https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/module-1/
+		- CodeCommit setup	
+			- be sure to use IAM user credentials, not root user
+			- create specific CodeCommit credentials
+			- abandoned CodeCommit because github has free private repos now.... duh 
+		- GitHub connection
+			- all done in console
+			- auto generated service role with admin access
+			- left auto detected build settings
+			- changed env variable key to ENVIRONMENT, value: dev
+			- save and deploy
+		- Domain Management
+			- add domain through amplify console
+			- steps 1-6 https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-a-third-party-dns-provider.html
+			- or just use route53 
+
+
+Authentication / Account Management
+	- AWS Cognito / Cognito User Pools
+	- AWS Cognito, Amplify, and aws-amplify-vue components
+		- https://medium.com/js-dojo/user-management-in-vue-js-with-aws-cognito-1905511b93b
+		- https://medium.com/@dabit3/how-to-build-serverless-vue-applications-with-aws-amplify-67d16c79e9d6
+
+Vuetify
+	- vue add vuetify
+	- default settings
+	- can use vue UI with `vue ui` command
+
+Content Management Site (CMS)
+[ for marketing, possible blog, ecommerce? ]
+** should stripe be integrated with this site or the iot app?
+	- looked into wix, squarespace, wordpress.org (+lightsail), drupal 
+
+	- wordpress.org	
+		- more plugins, themes, + bugs 
+		- code is sometimes necessary to fix compatability issues with plugins & themes
+		- host yourself
+		- more options, more searching, more bugs, more time spent 
+		- lightsail seems unneccesarily complicated for a simple site
+
+	- wix 
+		- better for conventional site 
+		- drag and drop, flexible, unstructured 
+		- can move things anywhere, but this creates its own issues 
+		- mobile view does not update when adjusting desktop (I thinnnkkk squarespace does)
+		- less features, themes, but all should work (low to no code)
+		- chaotic
+		- hosted by wix
+		- all services included in paid plan
+		- https://www.wix.com/upgrade/website
+
+	- squarespace 
+		- like wix, but better
+		- less theme and plugin options, but they all work so no coding
+			- clean, streamlined themes
+			- less time searching, deciding = more time spent on the site & other work
+			- hosted by squarespace  
+			- easy setup, low maintenance
+			- moving pieces around isn't as flexible, but it helps ensure things look better and align properly 
+			- business plan ($18/mo (annual)) + allows for javascript and css coding
+				- ecommerce but with 3% transaction fee 
+				- stripe intergration
+			- basic commerce ($26/mo (annual))
+				- 0% transaction fee
+			- advanced plan ($40/mo (annual))
+				- sell subscriptions
+				- 0% transaction fee
+			- https://www.squarespace.com/pricing
+
+	- why connect domain versus transfer to squarespace?
+		- domain was purchased through godaddy
+		- hosted with route 53
+		- connecting to squarespace
+
+	Vue.js Dev Workflow
+		- install npm
+		- install node.js
+		- sudo npm install -g vue-cli 
+		- go to folder 
+		- https://cli.vuejs.org/guide/creating-a-project.html#vue-create
+		- or use vue ui
+		- vue init webpack-simple vue-cli --> vue create projectName
+		- cd projectName
+		- npm install
+		- npm run dev
+		- localhost:8080
+		- always commit before running 'vue add' for plugins
+		- render() loads App.vue file (main component/instance)
+			- alternatives: 
+			- npm install --save-dev babel-preset-stage-2 
+			- .babelrc es6 spread operator
+			- or using mount()
+		- debug with dev tools in chrome or with vue dev tools
+
+		Vue CLI 3
+		- npm install -g @vue/cli
+
+	
