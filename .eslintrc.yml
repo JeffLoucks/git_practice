@@ -1,0 +1,36 @@
+extends:
+  - standard
+rules:
+  object-curly-spacing:
+    - error
+    - always
+  space-unary-ops:
+    - error
+    -
+      words: false
+      nonwords: false
+  operator-linebreak:
+    - error
+    - before
+  indent:
+    - error
+    - tab
+    -
+      ArrayExpression: off
+      MemberExpression: 0
+      SwitchCase: 1
+  no-tabs: 0
+  comma-dangle:
+    - error
+    - only-multiline
+  semi:
+    - error
+    - always
+  space-before-function-paren:
+    - warn
+    -
+      anonymous: never
+      named: never
+      asyncArrow: always
+#   parserOptions:
+#     ecmaVersion: 2017
