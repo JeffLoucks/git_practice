@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/dashboard.png" />
     <DegreeSee msg="Welcome to DegreeSee" />
+    <img alt="Vue logo" src="../assets/dashboard.png" />
   </div>
 </template>
 
