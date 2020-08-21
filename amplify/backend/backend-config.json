@@ -1,1 +1,9 @@
-{}
+{
+	"auth": {
+		"degreesee2de6ac08": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}
