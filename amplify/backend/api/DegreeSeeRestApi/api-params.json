@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/dash",
+            "lambdaFunction": "ApiGetDash",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "DegreeSeeRestApi",
+    "apiName": "DegreeSeeRestApi",
+    "functionArns": [
+        {
+            "lambdaFunction": "ApiGetDash"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-degreesee-dev-141657-authRole",
+        "unAuthRoleName": "amplify-degreesee-dev-141657-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "ApiGetDash",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
