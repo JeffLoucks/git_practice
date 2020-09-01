@@ -1,13 +1,13 @@
 <template>
-	<div class="home">
+	<div class="iframe">
 		<DegreeSee msg="Welcome to DegreeSee" />
-		<!-- <img alt="Initial State Dashboard" src="../assets/dashboard.png" /> -->
 	</div>
 </template>
 
 <script>
 // @ is an alias to /src
 import DegreeSee from "@/components/DegreeSee.vue";
+// import Register from "@/components/Register.vue";
 
 export default {
 	name: "Home",
