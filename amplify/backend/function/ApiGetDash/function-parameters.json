@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "storage": {
+      "DegreeSeeDashboardTable": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

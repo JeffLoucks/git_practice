@@ -4,9 +4,13 @@ import router from "./router";
 import store from "./store";
 import Amplify from "aws-amplify";
 import "@aws-amplify/ui-vue";
-import aws_exports from "./aws-exports";
+// import aws_exports from "./aws-exports";
 
-Amplify.configure(aws_exports);
+// Amplify.configure(aws_exports);
+
+import awsconfig from "./aws-exports";
+
+Amplify.configure(awsconfig);
 
 Vue.config.productionTip = false;
 
