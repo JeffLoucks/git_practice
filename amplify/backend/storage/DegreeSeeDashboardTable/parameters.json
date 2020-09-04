@@ -1,5 +1,0 @@
-{
-    "tableName": "DegreeSeeDashboardTable",
-    "partitionKeyName": "id",
-    "partitionKeyType": "S"
-}
