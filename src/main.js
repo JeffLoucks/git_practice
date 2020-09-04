@@ -4,10 +4,8 @@ import router from "./router";
 import store from "./store";
 import Amplify from "aws-amplify";
 import "@aws-amplify/ui-vue";
-// import aws_exports from "./aws-exports";
 
-// Amplify.configure(aws_exports);
-
+// import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from "./aws-exports";
 
 Amplify.configure(awsconfig);
