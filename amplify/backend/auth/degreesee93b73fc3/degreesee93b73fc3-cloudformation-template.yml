@@ -154,6 +154,18 @@ Resources:
           Name: email
           Required: true
           Mutable: true
+        -
+          Name: desktop
+          Required: true
+          Mutable: true
+          AttributeDataType: String
+          
+        -
+          Name: mobile
+          Required: false
+          Mutable: true
+          AttributeDataType: String
+
         
       
       

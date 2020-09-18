@@ -2,14 +2,14 @@
 	<div id="app">
 		<div id="nav">
 			<router-link to="/">
-				Home
+				Dashboard
 			</router-link> |
 			<router-link to="/auth" >
-				Log In
+				Sign In
 			</router-link> |
-			<router-link to="/dashboard">
+			<!-- <router-link to="/dashboard">
 				Dashboard
-			</router-link>
+			</router-link> -->
 		</div>
 		<router-view />
 	</div>
@@ -35,6 +35,12 @@
 }
 
 #nav a.router-link-exact-active {
-	color: #4dcff7;
+	color: #f7bc4d;
+}
+
+:root {
+  --amplify-primary-color: #E4660A;
+  --amplify-primary-tint: #ff7359;
+  --amplify-primary-shade: #e0573e;
 }
 </style>
