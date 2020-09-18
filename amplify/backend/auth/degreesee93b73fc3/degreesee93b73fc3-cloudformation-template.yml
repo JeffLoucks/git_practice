@@ -156,7 +156,7 @@ Resources:
           Mutable: true
         -
           Name: desktop
-          Required: true
+          Required: false
           Mutable: true
           AttributeDataType: String
           
