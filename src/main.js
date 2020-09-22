@@ -18,4 +18,5 @@ new Vue({
   render: h => h(App)
 }).$mount("#app");
 
+// TODO don't forget to remove this
 window.amplify = Amplify;

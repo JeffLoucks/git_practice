@@ -10,29 +10,6 @@
       "StackName": "amplify-degreesee-dev-141657",
       "StackId": "arn:aws:cloudformation:us-east-1:290358531753:stack/amplify-degreesee-dev-141657/e44b0fe0-e3e2-11ea-8b67-0a029b5a039d",
       "AmplifyAppId": "dt6lmfn43crnr"
-    },
-    "categories": {
-      "auth": {
-        "degreesee93b73fc3": {}
-      }
-    }
-  },
-  "prod": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-degreesee-prod-133829-authRole",
-      "UnauthRoleArn": "arn:aws:iam::290358531753:role/amplify-degreesee-prod-133829-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::290358531753:role/amplify-degreesee-prod-133829-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-degreesee-prod-133829-deployment",
-      "UnauthRoleName": "amplify-degreesee-prod-133829-unauthRole",
-      "StackName": "amplify-degreesee-prod-133829",
-      "StackId": "arn:aws:cloudformation:us-east-1:290358531753:stack/amplify-degreesee-prod-133829/7dd09720-f202-11ea-9581-0e36ce6a2c7c",
-      "AmplifyAppId": "dt6lmfn43crnr"
-    },
-    "categories": {
-      "auth": {
-        "degreesee93b73fc3": {}
-      }
     }
   }
 }
