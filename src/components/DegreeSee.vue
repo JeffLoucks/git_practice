@@ -8,7 +8,7 @@
 				>vue-cli documentation</a
 			>.
 		</p> -->
-		<h3>This will eventually be the Squarespace landing page.</h3>
+		<h3>Dashboard goes here.</h3>
 	</div>
 </template>
 

@@ -155,13 +155,24 @@ Resources:
           Required: true
           Mutable: true
         -
-          Name: desktop
+          Name: desktop2
           Required: false
           Mutable: true
           AttributeDataType: String
           
         -
-          Name: mobile
+          Name: mobile2
+          Required: false
+          Mutable: true
+          AttributeDataType: String
+        -
+          Name: desktop3
+          Required: false
+          Mutable: true
+          AttributeDataType: String
+          
+        -
+          Name: mobile3
           Required: false
           Mutable: true
           AttributeDataType: String

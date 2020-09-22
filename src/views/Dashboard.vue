@@ -1,7 +1,7 @@
 <template>
 	<div class="iframe">
 		<DegreeSee msg="Welcome to DegreeSee" />
-		<iframe src="'https://iot.app.initialstate.com/embed/#/tiles/' + {{ user.attributes.custom:desktop }}"></iframe>
+		<!-- <iframe src="'https://iot.app.initialstate.com/embed/#/tiles/' + {{ user.attributes.custom:desktop }}"></iframe> -->
 	</div>
 </template>
 
