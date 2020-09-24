@@ -12,7 +12,10 @@
 		<div v-if="authState === 'signedin' && user">
 			<amplify-sign-out></amplify-sign-out>
 			<div>Hello, {{ user.attributes.email }}</div>
+			<div>Hello, {{ user.attributes }}</div>
 			<iframe src="https://iot.app.initialstate.com/embed/#/tiles/bkt_1g4458k8tkfd1i"></iframe>
+			<!-- <dash></dash> -->
+			<!-- <p>{{dash}}</p> -->
 		</div>
 	</div>
 </template>
@@ -53,11 +56,32 @@ export default {
 				},
 
 			]
+			// dash: "https://iot.app.initialstate.com/embed/#/tiles/" + this.dashLink
 		};
+	},
+	dashLink() {
+		// onAuthUIStateChange((authData) => {
+		// 	this.user = authData;
+		// 	this.id = '123';
+			
+		// });
+			// let user = this.user;
+			let user = onAuthUIStateChange.authData.user;
+			return user;
+		
+		// dashLink () {
+		// onAuthUIStateChange((authState, authData) => {
+		// 	this.authState = authState;
+		// 	this.user = authData;
+		// 	this.dashLinkId = 
+		// 	let id = this.authData.user.attributes.email;
+		// 	return id;
+		// });
+		// } 
 	},
 	beforeDestroy() {
 		return onAuthUIStateChange;
-	}
+	},
 };
 </script>
 
@@ -84,5 +108,7 @@ iframe {
 	perspective: 1000;
 	flex: 1 1 auto;
 	overflow: auto;
+	width: 100%;
+	height: 100%
 }
 </style>

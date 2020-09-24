@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "degreesee93b73fc3_identitypool_93b73fc3",
+    "identityPoolName": "degreesee8176ce26_identitypool_8176ce26",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "degree93b73fc3",
-    "userPoolName": "degreesee93b73fc3_userpool_93b73fc3",
+    "resourceNameTruncated": "degree8176ce26",
+    "userPoolName": "degreesee8176ce26_userpool_8176ce26",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -12,8 +12,8 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Your verification code",
-    "emailVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Welcome to DegreeSee! Please verify your account.",
+    "emailVerificationMessage": "Confirm signup by clicking this link {####}.",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "degree93b73fc3_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "degree8176ce26_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "93b73fc3",
-    "resourceName": "degreesee93b73fc3",
+    "sharedId": "8176ce26",
+    "resourceName": "degreesee8176ce26",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -51,6 +51,7 @@
     ],
     "triggers": "{}",
     "userPoolGroupList": [],
+    "serviceName": "Cognito",
     "parentStack": {
         "Ref": "AWS::StackId"
     },

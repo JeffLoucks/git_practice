@@ -1,7 +1,6 @@
 <template>
 	<div class="hello">
 		<h1>{{ msg }}</h1>
-		<p>degreesee message</p>
 		<!-- <p>
 			For a guide and recipes on how to configure / customize this project,<br />
 			check out the
@@ -9,7 +8,7 @@
 				>vue-cli documentation</a
 			>.
 		</p> -->
-		<h3>This will eventually be the Squarespace landing page.</h3>
+		<h3>Dashboard goes here.</h3>
 	</div>
 </template>
 
