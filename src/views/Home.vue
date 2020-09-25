@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
 		<DegreeSee msg="Welcome to DegreeSee" />
-		<!-- <img alt="Initial State Dashboard" src="../assets/dashboard.png" /> -->
+		<img alt="Initial State Dashboard" src="../assets/dashboard.png" />
 	</div>
 </template>
 

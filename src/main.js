@@ -6,11 +6,12 @@ import Amplify from "aws-amplify";
 import "@aws-amplify/ui-vue";
 
 // import Amplify, { Auth } from 'aws-amplify';
-import awsconfig from "./aws-exports";
+// import awsconfig from "./aws-exports";
+import awsmobile from "./aws-exports";
 
 import vuetify from './plugins/vuetify';
 
-Amplify.configure(awsconfig);
+Amplify.configure(awsmobile);
 
 Vue.config.productionTip = false;
 
