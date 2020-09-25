@@ -15,33 +15,44 @@
 	</div> --> 
 	
 	<v-app>
-		<!-- <div id="app"> -->
+		<div id="app">
 			<v-app-bar
-        color="#FF9800"
-        dark
+				color="#FF9800"
+				dark
 				dense
-					prominent
+				prominent
 				
-      >
-				<!-- <v-img src="./assets/degreesee-name-logo.png" max-height="60%" contain left></v-img> -->
-        <v-toolbar-title>DegreeSee</v-toolbar-title>
-  
-        <v-spacer></v-spacer>
-  
-        <v-btn img to="/">
-          <!-- <v-img src="./assets/degreesee-name-logo.png"></v-img> -->
-        </v-btn>
-  
-        <v-btn to="/auth">
-          Account
-        </v-btn>
-  
+			>
+				<!-- <v-toolbar-title>DegreeSee</v-toolbar-title> -->
+				<v-img src="./assets/degreesee-name-logo.png" max-height="48px" contain></v-img>
+	
+				<v-spacer></v-spacer>
+	
+				<!-- <v-btn img to="/">
+					<v-img src="./assets/degreesee-name-logo.png"></v-img>
+				</v-btn> -->
+				<v-toolbar-items>
+
+					<v-btn text to="/auth">
+						Sign Up
+					</v-btn>
+					<v-btn text to="/auth">
+						Login
+					</v-btn>
+
+				</v-toolbar-items>
+	
 
 
-      </v-app-bar>
-    <!-- </div> -->
-		<v-content>hello there</v-content>
-  </v-app>
+			</v-app-bar>
+		</div>
+		<!-- <v-content>hello there</v-content> -->
+	<!-- <v-main>{{ DegreeSee }}</v-main> -->
+		<v-main>
+			<DegreeSee/>
+		</v-main>
+	</v-app>
+
 		<!-- <v-app-bar
 			app
 			color=#E4660A
@@ -80,6 +91,21 @@
 		<!-- </v-app-bar> -->
 
 </template>
+
+<script>
+import DegreeSee from './components/DegreeSee';
+
+export default {
+	name: 'App',
+	components: {
+		DegreeSee,
+	},
+
+	data: () => ({
+	//
+	}),
+};
+</script>
 
 <style scoped>
 	.nav {
