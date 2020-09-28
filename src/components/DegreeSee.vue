@@ -11,7 +11,8 @@
 export default {
 	name: "DegreeSee",
 	data: () => ({
-		msg: 'Welcome to DegreeSee'
+		msg: 'Welcome to DegreeSee',
+		// link
 	})
 	// props: {
 	// 	msg: String

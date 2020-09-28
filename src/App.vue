@@ -1,58 +1,5 @@
 <template>
-	<!-- <div id="app">
-			<div id="nav">
-							<router-link to="/">
-											Dashboard
-							</router-link> |
-							<router-link to="/auth" >
-											Sign In
-							</router-link> |
-							<-- <router-link to="/dashboard">
-											Dashboard
-							</router-link> -->
-			<!-- </div>
-			<router-view />
-	</div> --> 
-	
 	<v-app>
-		<div id="app">
-			<v-app-bar
-				color="#FF9800"
-				dark
-				dense
-				prominent
-				
-			>
-				<!-- <v-toolbar-title>DegreeSee</v-toolbar-title> -->
-				<v-img src="./assets/degreesee-name-logo.png" max-height="48px" contain></v-img>
-	
-				<v-spacer></v-spacer>
-	
-				<!-- <v-btn img to="/">
-					<v-img src="./assets/degreesee-name-logo.png"></v-img>
-				</v-btn> -->
-				<v-toolbar-items>
-
-					<v-btn text to="/auth">
-						Sign Up
-					</v-btn>
-					<v-btn text to="/auth">
-						Login
-					</v-btn>
-
-				</v-toolbar-items>
-	
-
-
-			</v-app-bar>
-		</div>
-		<!-- <v-content>hello there</v-content> -->
-	<!-- <v-main>{{ DegreeSee }}</v-main> -->
-		<v-main>
-			<DegreeSee/>
-		</v-main>
-	</v-app>
-
 		<!-- <v-app-bar
 			app
 			color=#E4660A
@@ -87,29 +34,36 @@
 			>
 				<span class="mr-2">Latest Release</span>
 				<v-icon>mdi-open-in-new</v-icon>
-			</v-btn> -->
-		<!-- </v-app-bar> -->
+			</v-btn>
+		</v-app-bar> -->
+		<NavBar/>
+		<v-main>
+			<div id="app">
+				<router-view/>
+				<!-- <DegreeSee/> -->
+			</div>
+		</v-main>
+	</v-app>
+
 
 </template>
 
 <script>
-import DegreeSee from './components/DegreeSee';
+// import DegreeSee from './components/DegreeSee';
+import NavBar from './components/NavigationBar';
 
 export default {
 	name: 'App',
 	components: {
-		DegreeSee,
-	},
-
-	data: () => ({
-	//
-	}),
+		NavBar
+		// DegreeSee
+	}
 };
 </script>
 
 <style scoped>
-	.nav {
+	/* .nav {
 		color: red
-	}
+	} */
 </style>
 

@@ -1,23 +1,25 @@
 <template>
-	<div>
-		<amplify-authenticator username-alias="email" v-if="authState !== 'signedin'">
-			<amplify-sign-up
-			slot="sign-up"
-			username-alias="email"
-			:form-fields.prop="formFields"
-		></amplify-sign-up>
-		</amplify-authenticator>
+	<v-app>
+		<div>
+			<amplify-authenticator username-alias="email" v-if="authState !== 'signedin'">
+				<amplify-sign-up
+				slot="sign-up"
+				username-alias="email"
+				:form-fields.prop="formFields"
+			></amplify-sign-up>
+			</amplify-authenticator>
 
-		<!-- <amplify-sign-in slot="sign-in" username-alias="email"></amplify-sign-in> -->
-		<div v-if="authState === 'signedin' && user">
-			<amplify-sign-out></amplify-sign-out>
-			<div>Hello, {{ user.attributes.email }}</div>
-			<div>Hello, {{ user.attributes }}</div>
-			<iframe src="https://iot.app.initialstate.com/embed/#/tiles/bkt_1g4458k8tkfd1i"></iframe>
-			<!-- <dash></dash> -->
-			<!-- <p>{{dash}}</p> -->
+			<!-- <amplify-sign-in slot="sign-in" username-alias="email"></amplify-sign-in> -->
+			<div v-if="authState === 'signedin' && user">
+				<amplify-sign-out></amplify-sign-out>
+				<p>Hello, {{ user.attributes.email }}</p>
+				<p>Hello, {{ user.attributes }}</p>
+				<iframe src="https://iot.app.initialstate.com/embed/#/tiles/bkt_1g4458k8tkfd1i"></iframe>
+				<!-- <dash></dash> -->
+				<!-- <p>{{dash}}</p> -->
+			</div>
 		</div>
-	</div>
+	</v-app>
 </template>
 
 <script>
