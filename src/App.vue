@@ -15,17 +15,6 @@
 	</div> --> 
 	
 	<v-app>
-		<NavBar/>
-		<!-- <v-content>hello there</v-content> -->
-	<!-- <v-main>{{ DegreeSee }}</v-main> -->
-		<v-main>
-			<div id="app">
-				<router-view/>
-				<DegreeSee/>
-			</div>
-		</v-main>
-	</v-app>
-
 		<!-- <v-app-bar
 			app
 			color=#E4660A
@@ -60,27 +49,36 @@
 			>
 				<span class="mr-2">Latest Release</span>
 				<v-icon>mdi-open-in-new</v-icon>
-			</v-btn> -->
-		<!-- </v-app-bar> -->
+			</v-btn>
+		</v-app-bar> -->
+		<NavBar/>
+		<v-main>
+			<div id="app">
+				<router-view/>
+				<!-- <DegreeSee/> -->
+			</div>
+		</v-main>
+	</v-app>
+
 
 </template>
 
 <script>
-import DegreeSee from './components/DegreeSee';
+// import DegreeSee from './components/DegreeSee';
 import NavBar from './components/NavigationBar';
 
 export default {
 	name: 'App',
 	components: {
-		NavBar,
-		DegreeSee
+		NavBar
+		// DegreeSee
 	}
 };
 </script>
 
 <style scoped>
-	.nav {
+	/* .nav {
 		color: red
-	}
+	} */
 </style>
 
