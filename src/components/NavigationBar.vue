@@ -13,15 +13,18 @@
 				transition="scale-transition"
 				width="40"
 				light
+				to="/"
 			/>
-			<v-img
-				alt="Vuetify Logo"
-				class="shrink mr-2"
-				contain
-				src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-				transition="scale-transition"
-				width="40"
-			/>			
+			<v-btn :href="href">
+				<v-img
+					alt="Vuetify Logo"
+					class="shrink mr-2"
+					contain
+					src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+					transition="scale-transition"
+					width="40"
+				/>			
+			</v-btn>
 
 			<!-- <v-img
 				alt="Degreesee Name"
@@ -39,14 +42,18 @@
 
 		<v-toolbar-items>
 			<v-btn to="/">
-				<v-img src="/assets/degreesee-logo-icon.png" contain></v-img>
+				<v-img :src="logoIcon" contain></v-img>
 			</v-btn>
 		<v-spacer></v-spacer>
-				<v-btn text to="/auth">
-					Sign Up
-				</v-btn>
-			<v-btn text to="/auth">
+			<v-btn v-if="authState !== 'signedin'" text to="/auth">
+				Sign In
+			</v-btn>
+			<!-- <v-btn v-if="authState !== 'signedin'" text to="/auth">
 				Login
+			</v-btn> -->
+			<v-btn v-if="authState === 'signedin' && user">
+				<amplify-sign-out></amplify-sign-out>
+				<!-- <p>Hello, {{user.email}}</p> -->
 			</v-btn>
 
 		</v-toolbar-items>
@@ -55,10 +62,25 @@
 </template>
 
 <script>
+import { onAuthUIStateChange } from '@aws-amplify/ui-components';
+
 export default {
 	name: "NavBar",
+	created() {
+		onAuthUIStateChange((authState, authData) => {
+			this.authState = authState;
+			this.user = authData;
+		});
+	},
 	data: () => ({
-		logoIcon: '/assets/degreesee-logo-icon.png'
-	})
+		logoIcon: '@/assets/degreesee-logo-icon.png',
+		href: 'https://www.degreesee.com',
+		user: undefined,
+		authState: undefined
+	}),
+	
+	beforeDestroy() {
+		return onAuthUIStateChange;
+	}
 };
 </script>
