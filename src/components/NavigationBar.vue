@@ -5,17 +5,18 @@
 		dark
 	>
 		<div class="d-flex align-center">
-			<v-img
-				alt="Degreesee Logo"
-				class="shrink mr-2"
-				contain
-				:src="logoIcon"
-				transition="scale-transition"
-				width="40"
-				light
-				to="/"
-			/>
-			<v-btn :href="href">
+			<a :href="link">
+				<v-img
+					alt="DegreeSee Icon"
+					class="shrink mr-2"
+					contain
+					:src="logoIcon"
+					transition="scale-transition"
+					width="40"
+					to="/"
+				/>
+			</a>
+			<a :href="link">
 				<v-img
 					alt="Vuetify Logo"
 					class="shrink mr-2"
@@ -24,8 +25,7 @@
 					transition="scale-transition"
 					width="40"
 				/>			
-			</v-btn>
-
+			</a>
 			<!-- <v-img
 				alt="Degreesee Name"
 				class="shrink mt-1 hidden-sm-and-down"
@@ -35,9 +35,10 @@
 				width="100"
 			/> -->
 		</div>
-		<v-toolbar-title>DegreeSee</v-toolbar-title>
+		<a :href="link">
+			<v-toolbar-title>DegreeSee</v-toolbar-title>
+		</a>
 		<!-- <v-img src="/assets/degreesee-logo-name.png" contain></v-img> -->
-		<!-- <v-app-bar-nav-icon ></v-app-bar-nav-icon> -->
 		<v-spacer></v-spacer>
 
 		<v-toolbar-items>
@@ -74,7 +75,7 @@ export default {
 	},
 	data: () => ({
 		logoIcon: '@/assets/degreesee-logo-icon.png',
-		href: 'https://www.degreesee.com',
+		link: 'https://www.degreesee.com',
 		user: undefined,
 		authState: undefined
 	}),
