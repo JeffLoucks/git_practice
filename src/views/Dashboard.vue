@@ -1,19 +1,17 @@
 <template>
-	<div class="iframe">
-		<DegreeSee msg="Welcome to DegreeSee" />
-		<!-- <iframe src="'https://iot.app.initialstate.com/embed/#/tiles/' + {{ user.attributes.custom:desktop }}"></iframe> -->
-	</div>
+	<v-main>
+		<Dashboard/>
+	</v-main>
 </template>
 
 <script>
 // @ is an alias to /src
-import DegreeSee from "@/components/DegreeSee.vue";
-// import Register from "@/components/Register.vue";
+import Dashboard from "@/components/Dashboard.vue";
 
 export default {
-	name: "Home",
+	name: "Dashboard",
 	components: {
-		DegreeSee
+		Dashboard
 	}
 };
 </script>

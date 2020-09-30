@@ -1,7 +1,10 @@
 <template>
-	<div class="iframe">
-		<iframe :src="dashLink"></iframe>
-	</div>
+	<v-main class="main">
+		<div class="iframe">
+			<iframe :src="dashLink"></iframe>
+		</div>
+
+	</v-main>
 </template>
 
 <script>
@@ -16,3 +19,24 @@ export default {
 	})
 };
 </script>
+
+<style scoped>
+	iframe {
+		width: 100%;
+		/* height: 1000px; */
+		flex: 1 1 auto;
+		padding: 0px;
+		/* position: absolute;  */
+		height: 100%; 
+		/* border: none */
+	}
+
+	v-main {
+		padding: 0px;
+	}
+
+	.main {
+		padding: 0px;
+		height: 100%;
+	}
+</style>

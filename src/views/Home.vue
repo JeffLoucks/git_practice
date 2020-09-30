@@ -1,18 +1,28 @@
 <template>
-	<div class="home">
-		<DegreeSee msg="Welcome to DegreeSee" />
-		<!-- <img alt="Initial State Dashboard" src="../assets/dashboard.png" /> -->
-	</div>
+	<v-container>
+		<div class="degreesee">
+			<h1>{{ msg }}</h1>
+			<!-- <iframe width="100%" height="100%" src='https://iot.app.initialstate.com/embed/#/tiles/bkt_1g4458k8tkfd1i'></iframe> -->
+		</div>
+	</v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import DegreeSee from "@/components/DegreeSee.vue";
-
 export default {
-	name: "Home",
-	components: {
-		DegreeSee
-	}
+	name: "DegreeSee",
+	data: () => ({
+		msg: 'Welcome to DegreeSee',
+		// link
+	})
+	// props: {
+	// 	msg: String
+	// }
 };
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+	h1 {
+		text-align: center;
+	}
+</style>

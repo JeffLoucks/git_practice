@@ -27,24 +27,28 @@
 				/>			
 			</a>
 		</div>
-		<a :href="link">
+		<!-- <a :href="link"> -->
 			<v-toolbar-title>DegreeSee</v-toolbar-title>
-		</a>
+		<!-- </a> -->
 		<!-- <v-img src="/assets/degreesee-logo-name.png" contain></v-img> -->
 		<v-spacer></v-spacer>
 
 		<v-toolbar-items>
-			<v-btn to="/">
-				<v-img :src="logoIcon" contain></v-img>
+			<v-btn text to="/">
+				Home
+				<!-- <v-img :src="logoIcon" contain></v-img> -->
 			</v-btn>
 		<v-spacer></v-spacer>
+			<v-btn v-if="authState === 'signedin' && user" text to="/Dashboard">
+				View My Data
+			</v-btn>
 			<v-btn v-if="authState !== 'signedin'" text to="/auth">
 				Sign In
 			</v-btn>
 			<!-- <v-btn v-if="authState !== 'signedin'" text to="/auth">
 				Login
 			</v-btn> -->
-			<v-btn v-if="authState === 'signedin' && user">
+			<v-btn v-if="authState === 'signedin' && user" text>
 				<amplify-sign-out></amplify-sign-out>
 				<!-- <p>Hello, {{user.email}}</p> -->
 			</v-btn>
@@ -77,3 +81,11 @@ export default {
 	}
 };
 </script>
+
+<style scoped>
+	v-btn {
+		background-color: red;
+	}
+
+
+</style>
