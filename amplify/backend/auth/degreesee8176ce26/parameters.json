@@ -13,7 +13,7 @@
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Welcome to DegreeSee! Please verify your account.",
-    "emailVerificationMessage": "Confirm signup by clicking this link {####}.",
+    "emailVerificationMessage": "Your verification code is {####}.",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],

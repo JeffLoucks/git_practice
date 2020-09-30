@@ -1,10 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Dashboard from "../views/Dashboard.vue";
+// import Dashboard from "../views/Dashboard.vue";
 // import Auth from "../components/Auth.vue";
 import NotFound from "../views/NotFound.vue";
-// import Auth from "../views/Auth.vue";
+import Auth from "../views/Auth.vue";
 
 Vue.use(VueRouter);
 
@@ -17,13 +17,15 @@ const routes = [
 	{
 		path: "/auth",
 		name: "Auth",
-		component: () => import("../components/Auth.vue")
+		component: Auth
+		// component: () => import("../views/Auth.vue")
 	},
-	{
-		path: "/dashboard",
-		name: "Dashboard",
-		component: Dashboard
-	},
+	// {
+	// 	path: "/dashboard",
+	// 	name: "Dashboard",
+	// 	component: Dashboard,
+	// 	meta: { requiresAuth: true }
+	// },
 	{
 		path: "*",
 		name: "NotFound",

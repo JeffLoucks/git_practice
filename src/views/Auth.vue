@@ -1,37 +1,36 @@
 <template>
 	<v-app>
-		<div>
-			<amplify-authenticator username-alias="email" v-if="authState !== 'signedin'">
-				<amplify-sign-up
-				slot="sign-up"
-				username-alias="email"
-				:form-fields.prop="formFields"
-			></amplify-sign-up>
-			</amplify-authenticator>
-
-			<!-- <amplify-sign-in slot="sign-in" username-alias="email"></amplify-sign-in> -->
-			<!-- <div v-if="authState === 'signedin' && user"> -->
-				<!-- <amplify-sign-out></amplify-sign-out> -->
-				<!-- <p>Hello, {{ user.attributes.email }}</p> -->
-				<!-- <p>Hello, {{ user.attributes }}</p> -->
-				<!-- <iframe src="https://iot.app.initialstate.com/embed/#/tiles/bkt_1g4458k8tkfd1i"></iframe> -->
-				<!-- <dash></dash> -->
-				<!-- <p>{{dash}}</p> -->
-			<!-- </div> -->
-		</div>
+		<v-main>
+			<div>
+				<amplify-authenticator username-alias="email" v-if="authState !== 'signedin'">
+					<amplify-sign-up
+					slot="sign-up"
+					username-alias="email"
+					:form-fields.prop="formFields"
+				></amplify-sign-up>
+				</amplify-authenticator>
+			</div>
+			<div v-if="authState === 'signedin' && user">
+				<Dashboard />
+			</div>
+		</v-main>
 	</v-app>
 </template>
 
 <script>
 import { onAuthUIStateChange } from '@aws-amplify/ui-components';
+import Dashboard from '@/components/Dashboard.vue';
 
 export default {
-	name: 'AuthStateApp', // or AuthWithSlots
+	name: 'AuthStateApp',
 	created() {
 		onAuthUIStateChange((authState, authData) => {
 			this.authState = authState;
 			this.user = authData;
 		});
+	},
+	components: {
+		Dashboard
 	},
 	data() {
 		return {
@@ -61,26 +60,26 @@ export default {
 			// dash: "https://iot.app.initialstate.com/embed/#/tiles/" + this.dashLink
 		};
 	},
-	dashLink() {
-		// onAuthUIStateChange((authData) => {
-		// 	this.user = authData;
-		// 	this.id = '123';
+	// dashLink() {
+	// 	// onAuthUIStateChange((authData) => {
+	// 	// 	this.user = authData;
+	// 	// 	this.id = '123';
 			
-		// });
-			// let user = this.user;
-			let user = onAuthUIStateChange.authData.user;
-			return user;
+	// 	// });
+	// 		// let user = this.user;
+	// 		let user = onAuthUIStateChange.authData.user;
+	// 		return user;
 		
-		// dashLink () {
-		// onAuthUIStateChange((authState, authData) => {
-		// 	this.authState = authState;
-		// 	this.user = authData;
-		// 	this.dashLinkId = 
-		// 	let id = this.authData.user.attributes.email;
-		// 	return id;
-		// });
-		// } 
-	},
+	// 	// dashLink () {
+	// 	// onAuthUIStateChange((authState, authData) => {
+	// 	// 	this.authState = authState;
+	// 	// 	this.user = authData;
+	// 	// 	this.dashLinkId = 
+	// 	// 	let id = this.authData.user.attributes.email;
+	// 	// 	return id;
+	// 	// });
+	// 	// } 
+	// },
 	beforeDestroy() {
 		return onAuthUIStateChange;
 	},
@@ -93,13 +92,8 @@ amplify-authenticator {
 	justify-content: center;
 	align-items: center;
 	flex: 1;
-	
 	/* height: 100vh; */
-}
-
-amplify-button.button {
-	background-color: #3fc5ea;
-	color: #3fc5ea;
+	padding: 20px;
 }
 
 iframe {

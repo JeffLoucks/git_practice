@@ -26,14 +26,6 @@
 					width="40"
 				/>			
 			</a>
-			<!-- <v-img
-				alt="Degreesee Name"
-				class="shrink mt-1 hidden-sm-and-down"
-				contain
-				min-width="100"
-				src="/assets/degreesee-logo-name.png"
-				width="100"
-			/> -->
 		</div>
 		<a :href="link">
 			<v-toolbar-title>DegreeSee</v-toolbar-title>
