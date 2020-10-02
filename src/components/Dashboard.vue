@@ -8,14 +8,28 @@
 
 <script>
 // @ is an alias to /src
-// import DegreeSee from "@/components/DegreeSee.vue";
+// import { onAuthUIStateChange } from '@aws-amplify/ui-components';
 
 export default {
 	name: "Dashboard",
 	data: () => ({
 		bkt: 'bkt_1g4458k8tkfd1i',
-		dashLink: 'https://iot.app.initialstate.com/embed/#/tiles/bkt_1g4458k8tkfd1i'
-	})
+		embedLink: 'https://iot.app.initialstate.com/embed/#/tiles/'
+	}),
+	// created() {
+	// 	onAuthUIStateChange((authState, authData) => {
+	// 		this.authState = authState;
+	// 		this.user = authData;
+	// 	});
+	// },
+	computed: {
+		// userDash: (authData) => {
+		// 	authData.user.email;
+		// },
+		dashLink: (embedLink, bkt) => {
+			return embedLink + bkt;
+		}
+	}
 };
 </script>
 
