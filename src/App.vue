@@ -25,9 +25,3 @@ export default {
 };
 </script>
 
-<style scoped>
-	/* .nav {
-		color: red
-	} */
-</style>
-
