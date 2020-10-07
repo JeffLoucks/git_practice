@@ -9,15 +9,12 @@
 			></amplify-sign-up>
 			</amplify-authenticator>
 		</div>
-		<div v-if="authState === 'signedin' && user">
-			<Dashboard />
-		</div>
 	</main>
 </template>
 
 <script>
 import { onAuthUIStateChange } from '@aws-amplify/ui-components';
-import Dashboard from '@/components/Dashboard.vue';
+// import Dashboard from '@/components/Dashboard.vue';
 
 export default {
 	name: 'AuthStateApp',
@@ -28,7 +25,7 @@ export default {
 		});
 	},
 	components: {
-		Dashboard
+		// Dashboard
 	},
 	data() {
 		return {
