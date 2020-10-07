@@ -9,17 +9,14 @@ import "@aws-amplify/ui-vue";
 // import awsconfig from "./aws-exports";
 import awsmobile from "./aws-exports";
 
-import vuetify from './plugins/vuetify';
-
 Amplify.configure(awsmobile);
 
 Vue.config.productionTip = false;
 
 new Vue({
-  router,
-  store,
-  vuetify,
-  render: h => h(App)
+	router,
+	store,
+	render: h => h(App)
 }).$mount("#app");
 
 // TODO don't forget to remove this

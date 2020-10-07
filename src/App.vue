@@ -1,27 +1,24 @@
 <template>
-	<v-app>
-		<NavBar/>
-		<v-main>
-			<div id="app">
-				<router-view/>
-				<!-- <DegreeSee/> -->
-			</div>
-		</v-main>
-	</v-app>
-
-
+	<div id="app">
+		<app-header></app-header>
+		<div>
+			<router-view></router-view>
+		</div>
+	</div>
 </template>
 
 <script>
-// import DegreeSee from './components/DegreeSee';
-import NavBar from './components/NavigationBar';
-
+import Header from './components/Header';
 export default {
 	name: 'App',
 	components: {
-		NavBar
-		// DegreeSee
+		appHeader: Header
 	}
 };
 </script>
 
+<style>
+	body {
+		margin: 0px;
+	}
+</style>
