@@ -1,8 +1,9 @@
 <template>
 	<v-main class="main">
-		<div class="iframe">
+		<!-- <div class="iframe"> -->
 			<iframe :src="dashLink"></iframe>
-		</div>
+			<p>{{ dashLink }} </p>
+		<!-- </div> -->
 	</v-main>
 </template>
 
