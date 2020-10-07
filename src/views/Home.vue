@@ -10,15 +10,16 @@
 			</amplify-authenticator>
 		</div>
 		<div v-if="authState === 'signedin' && user" class="dashboard">
-			<h3>Welcome to your data, visualized, {{ user.attributes.email }}</h3>
-			<dashboard></dashboard>
+			<p>Welcome to your data, {{ user.attributes.email }}</p>
+			<!-- <dashboard></dashboard> -->
+			<div class="desktop-iframe"><iframe :src="userData"></iframe></div>
 		</div>
 	</main>
 </template>
 
 <script>
 import { onAuthUIStateChange } from '@aws-amplify/ui-components';
-import Dashboard from '@/components/Dashboard.vue';
+// import Dashboard from '@/components/Dashboard.vue';
 
 export default {
 	name: 'AuthStateApp',
@@ -29,7 +30,7 @@ export default {
 		});
 	},
 	components: {
-		dashboard: Dashboard
+		// dashboard: Dashboard
 	},
 	data() {
 		return {
@@ -59,6 +60,13 @@ export default {
 			// dash: "https://iot.app.initialstate.com/embed/#/tiles/" + this.dashLink
 		};
 	},
+	computed: {
+		userData() { 
+			let embedLink = "https://iot.app.initialstate.com/embed/#/tiles/";
+			let desktop = this.user.attributes['custom:desktop'];
+			return embedLink + desktop;
+		}
+	},
 	// dashLink() {
 	// 	// onAuthUIStateChange((authData) => {
 	// 	// 	this.user = authData;
@@ -81,7 +89,7 @@ export default {
 	// },
 	beforeDestroy() {
 		return onAuthUIStateChange;
-	},
+	}
 };
 </script>
 
@@ -108,9 +116,10 @@ iframe {
 	height: 100%
 }
 
-/* .dashboard {
-
-} */
+.desktop-iframe {
+	height: 1000px;
+	width: 100%;
+}
 
 </style>
 
