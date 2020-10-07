@@ -3,7 +3,6 @@
 		<div class="iframe">
 			<iframe :src="dashLink"></iframe>
 		</div>
-
 	</v-main>
 </template>
 
