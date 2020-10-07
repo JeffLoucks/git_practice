@@ -1,7 +1,7 @@
 <template>
 	<div class="NotFound">
 		<h1>{{ title }}</h1>
-		<p> {{msg}}
+		<p> {{ msg }}
 
 		</p>
 	</div>
@@ -12,7 +12,7 @@ export default {
 	name: "NotFound",
 	data: function() {
 		return {
-				title: 'Hmmm... something went wrong',
+				title: 'Hmmm... something went wrong.',
 				msg: 'This is not the page you were looking for.'
 			};
 	}
@@ -23,14 +23,6 @@ export default {
 <style scoped>
 h1 {
 	margin: 40px 0 0;
-}
-ul {
-	list-style-type: none;
-	padding: 0;
-}
-li {
-	display: inline-block;
-	margin: 0 10px;
 }
 a {
 	color: #42b983;
