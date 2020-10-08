@@ -12,7 +12,7 @@
 			</amplify-authenticator>
 		</div>
 		<div v-if="authState === 'signedin' && user" class="dashboard">
-			<p>Welcome to your data, {{ user.attributes.email }}</p>
+			<!-- <p>Welcome to your data, {{ user.attributes.email }}</p> -->
 			<!-- <dashboard></dashboard> -->
 			<div class="desktop-iframe"><iframe :src="userData"></iframe></div>
 		</div>
