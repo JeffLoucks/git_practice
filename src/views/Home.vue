@@ -6,6 +6,8 @@
 				slot="sign-up"
 				username-alias="email"
 				:form-fields.prop="formFields"
+				header-text="Sign Up With DegreeSee"
+				submit-button-text="Sign Up"
 			></amplify-sign-up>
 			</amplify-authenticator>
 		</div>
@@ -67,26 +69,6 @@ export default {
 			return embedLink + desktop;
 		}
 	},
-	// dashLink() {
-	// 	// onAuthUIStateChange((authData) => {
-	// 	// 	this.user = authData;
-	// 	// 	this.id = '123';
-			
-	// 	// });
-	// 		// let user = this.user;
-	// 		let user = onAuthUIStateChange.authData.user;
-	// 		return user;
-		
-	// 	// dashLink () {
-	// 	// onAuthUIStateChange((authState, authData) => {
-	// 	// 	this.authState = authState;
-	// 	// 	this.user = authData;
-	// 	// 	this.dashLinkId = 
-	// 	// 	let id = this.authData.user.attributes.email;
-	// 	// 	return id;
-	// 	// });
-	// 	// } 
-	// },
 	beforeDestroy() {
 		return onAuthUIStateChange;
 	}
@@ -107,18 +89,21 @@ amplify-authenticator {
 iframe {
 	position: relative;
 	list-style:none;
-	padding: 12px 0 0 0;
+	padding: 0;
 	margin: 0;
 	perspective: 1000;
 	flex: 1 1 auto;
 	overflow: auto;
 	width: 100%;
-	height: 100%
+	height: 100%;
+	display: block;
+	border: none;
 }
 
 .desktop-iframe {
-	height: 1000px;
+	height: 100%;
 	width: 100%;
+	position: absolute;
 }
 
 </style>

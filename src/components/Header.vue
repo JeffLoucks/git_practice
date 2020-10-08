@@ -6,7 +6,7 @@
 				<a :href="link">
 					<img class="logo-icon"
 						:src="logoIcon"
-						alt="DegreeSee Icon"
+						alt="DegreeSee Logo Icon"
 					>
 				</a>
 			</div>
@@ -15,10 +15,10 @@
 					Sign In
 				</div>
 			</router-link>
-			<div v-if="authState === 'signedin' && user" text>
+			<div v-if="authState === 'signedin' && user" text class="signout">
 				<amplify-sign-out></amplify-sign-out>
 			</div>
-		</div><!-- /.container-fluid -->
+		</div>
 	</nav>
 </template>
 
@@ -49,9 +49,14 @@ export default {
 
 <style scoped>
 .nav {
-	background-color: orange;
+	/* background-color: #E05800; */
+	background-color: #EB7020;
 	height: 60px;
 	padding: 10px;
+}
+
+.signout {
+	float: right;
 }
 
 

@@ -21,4 +21,11 @@ export default {
 	body {
 		margin: 0px;
 	}
+
+:root {
+	/* --amplify-primary-color: #ff6347; */
+	--amplify-primary-color: #F27E31;
+	--amplify-primary-tint: #E05800;
+	--amplify-primary-shade: #FD9653;
+}
 </style>
